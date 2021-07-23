@@ -10,7 +10,10 @@ export class AppComponent {
   public name = "Rahul Ganesh";
   // public contactComponent: any = '';
   title = 'hello-world';
-  
+
+  // back(): void {
+  //   this.router.navigate("..");
+  // }
 
   constructor(){}
   

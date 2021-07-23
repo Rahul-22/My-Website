@@ -11,38 +11,13 @@
   }
 </style>
 
-<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
-<script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script  defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-<script defer>
-  var t1 = new TimelineMax({onUpdate: updatePercentage});
-  const contorller = new ScrollMagic.Contorller();
-
-  t1.from("card2", .5, {x:200, opacity: 0});
-
-  const scene = new ScrollMagic.Scene({
-    triggerElement: ".block-card",
-    triggerHook: "onLeave",
-    duration: "100%"
-  })
-    .setPin(".block-card")
-    .setTween(t1)
-      .addTo(contorller);
-
-  function updatePercentage(){
-    t1.progress();
-    console.log(t1.progress());
-  }
-</script> -->
-
 <!-- Toolbar -->
 <div class="toolbar highlight" role="banner">
-  <h2><span style="margin-left: 10mm;" routerLink='/'>{{name}}</span></h2>
+  <h2><span style="margin-left: 10mm;" class="HoverGlow" routerLink='/'>{{name}}</span></h2>
     <div class="spacer"></div>
-  <h2><span style="text-align: left; margin: 15px;" routerLink='/About'>About</span></h2>
-  <h2><span style="text-align: left; margin: 15px;"><a href="#portfolio" style="text-decoration: none; color: white;">Portfolio</a></span></h2>
-  <h2><span style="text-align: left; margin: 15px 35px 15px 15px;" routerLink='/Contact'>Contact</span></h2>
+  <h2><a href="#Abt" style="text-decoration: none; color: white;"><span class="HoverGlow" style="text-align: left; margin: 15px;">About</span></a></h2>
+  <h2><a href="#portfolio" style="text-decoration: none; color: white;"><span class="HoverGlow" style="text-align: left; margin: 15px;">Portfolio</span></a></h2>
+  <h2><a href="#Contact" style="text-decoration: none; color: white;"><span class="HoverGlow" style="text-align: left; margin: 15px 35px 15px 15px;">Contact</span></a></h2>
 </div>
 
 <div class="content">
@@ -51,10 +26,12 @@
   <h4 style="font-size: 30px;">B.E. Graduate Student & Developer</h4>
 </div>
 
-<router-outlet></router-outlet>
+<div >
+  <app-about id="Abt"></app-about>
+</div>
 
-<div class="Portfolio" id="portfolio" >
-  <div style="background-color: #1B1B1B; border: 3px solid white;">
+<div class="Portfolio" id="portfolio">
+  <div style="background-color: #1B1B1B;">
     <p class="font1">Portfolio</p>
   </div>
   <p class="font" style="text-align: center; color: black;">My Top Projects</p>
@@ -95,23 +72,25 @@
     </div>
   </div>
   
-  <h2 style="display: flex; align-content: center;justify-content: center; margin: 16px 8px 16px 8px;">Internships</h2>
-  <div class="main">
-    <div class="block-card" style="display: flex; align-content: center; justify-content: center;">
-      <div class="card2">
-        <p class="font" >Hiii</p>
-      </div>
+  <div style="display: flex; flex-direction: row; align-content: center; justify-content: center; margin: 35px 8px 28px 8px;">
+    <div style="margin: 0px 40px;">
+      <h2 class="IPA highlight" routerLink='/Intern'>Internships</h2>
     </div>
-    
-    <p class="font" >Hiii</p>
-    <p class="font" >Hiii</p>
-    <p class="font" >Hiii</p>
-    <p class="font" >Hiii</p>
-    <p class="font" >Hiii</p>
-    <p class="font" >Hiii</p>
+    <div style="margin: 0px 40px;">
+      <h2 class="IPA highlight" routerLink='/Proj'>Projects</h2>
+    </div>
+    <div style="margin: 0px 40px;">
+      <h2 class="IPA highlight" routerLink='/Achive'>Achivements</h2>
+    </div> 
   </div>
+
+  <router-outlet></router-outlet>
+  
 </div>
 
+<app-contact id="Contact"></app-contact>
+
+<!-- Footer -->
 <div id="footer">
   <p>© 2017-2021 Rahul Ganesh  </p>
 </div>
